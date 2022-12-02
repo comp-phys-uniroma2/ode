@@ -91,7 +91,7 @@ program test
     case('dp54')
        do i = 1, Nstep * Ncicli
             c = u00(1)*cos(t)+u00(2)*sin(t)
-            write(*,*) t, u0(1), c, abs(u0(1)-c), err
+            write(*,'(5(e16.8))') t, u0(1), c, abs(u0(1)-c), err
             call dopri54(harmonic, t, dt, u0, u, err)
             t = t+dt
             u0 = u
@@ -99,7 +99,7 @@ program test
     case('dp87')
        do i = 1, Nstep * Ncicli
             c = u00(1)*cos(t)+u00(2)*sin(t)
-            write(*,*) t, u0(1), c, abs(u0(1)-c), err
+            write(*,'(5(e16.8))') t, u0(1), c, abs(u0(1)-c), err
             call dopri87(harmonic, t, dt, u0, u, err)
             t = t+dt
             u0 = u
